@@ -2,6 +2,8 @@
 
 /**
 * tree_height - function that measures the height of a binary tree
+@tree: pointer to the node of the tree
+* to measure the balance factor
 * Return: height of tree
 */
 
