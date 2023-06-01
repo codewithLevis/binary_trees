@@ -30,7 +30,7 @@ double power(double base, int exponent)
 }
 
 /**
- * binary_tree_height - function that measures
+ * height - function that measures
  *the height of a binary tree
  *@tree: pointer to a node
  * Return: height
@@ -41,7 +41,7 @@ int height(const binary_tree_t *tree)
 	int right_height = 0;
 
 	if (tree == NULL)
-		return 0;
+		return (0);
 
 	left_height = height(tree->left);
 	right_height = height(tree->right);
@@ -70,7 +70,7 @@ binary_tree_t *dequeue(binary_tree_t **array, int *front)
 {
 	binary_tree_t *node = array[*front];
 	(*front)++;
-	return node;
+	return (node);
 }
 
 /**
