@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 
-typedef const c;
+
 /**
  * binary_trees_ancestor -  function that finds
  * the lowest common ancestor of two nodes
@@ -8,7 +8,7 @@ typedef const c;
  * @s: pointer to the second node
  * Return: pointer to the lowest common ancestor
 */
-binary_tree_t *binary_trees_ancestor(c binary_tree_t *f, c binary_tree_t *s)
+binary_tree_t *binary_trees_ancestor(cb *f, cb *s)
 {
 	binary_tree_t *temp;
 
