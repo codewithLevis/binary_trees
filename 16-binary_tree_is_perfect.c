@@ -1,25 +1,21 @@
 #include "binary_trees.h"
 
+
 /**
-* tree_height - function that measures the height of a binary tree
-*@tree: pointer to the node of the tree
-* to measure the balance factor
-* Return: height of tree
+ * nodes_count - function that counts the number of nodes in a binary tree
+ *@tree: a pointer to a binary tree
+ * Return: nodes count
 */
 
-int tree_height(binary_tree_t *tree)
+int nodes_count(binary_tree_t *tree)
 {
-	int left_height = 0;
-	int right_height = 0;
+	int count = 0;
 
-	if (tree == NULL)
+	if (!tree)
 		return (0);
-
-	left_height = tree_height(tree->left);
-	right_height = tree_height(tree->right);
-	return ((left_height > right_height ? left_height : right_height) + 1);
+	count = 1 + nodes_count(tree->left) + nodes_count((tree->right));
+	return (count);
 }
-
 
 /**
 * binary_tree_is_perfect - a function that checks if
@@ -32,9 +28,5 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	if (!tree->left && tree->right)
-		return (0);
-	if (tree->left && !tree->right)
-		return (0);
-	return (tree_height(tree->left) == tree_height(tree->right));
+	return (nodes_count(tree->left) == nodes_count(tree->right));
 }
